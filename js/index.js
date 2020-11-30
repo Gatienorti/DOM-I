@@ -37,6 +37,57 @@ const siteContent = {
   },
 };
 
+//navbar
+let navBar = document.querySelectorAll('nav a').forEach((a,b)=>{
+  a.textContent = siteContent.nav[`nav-item-${b+1}`]
+})
+document.querySelector('header img').src = siteContent.nav['img-src']
+
+//title 
+document.querySelector('.cta-text h1').textContent = siteContent.cta.h1
+document.querySelector('.cta-text button').textContent = siteContent.cta.button
+document.querySelector('.cta img').src = siteContent.cta['img-src']
+
+//core
+document.querySelector('.top-content .text-content h4').textContent = siteContent['main-content']['features-h4']
+document.querySelector('.top-content .text-content p').textContent= siteContent['main-content']['features-content']
+document.querySelector('.top-content .text-content:nth-child(2) h4').textContent= siteContent['main-content']['about-h4']
+document.querySelector('.top-content .text-content:nth-child(2) p').textContent= siteContent['main-content']['about-content']
+document.querySelector('.middle-img').src = siteContent['main-content']['middle-img-src']
+document.querySelector('.bottom-content .text-content h4').textContent= siteContent['main-content']['services-h4']
+document.querySelector('.bottom-content .text-content p').textContent= siteContent['main-content']['services-content']
+document.querySelector('.bottom-content .text-content:nth-child(2) h4').textContent= siteContent['main-content']['product-h4']
+document.querySelector('.bottom-content .text-content:nth-child(2) p').textContent= siteContent['main-content']['product-content']
+document.querySelector('.bottom-content .text-content:nth-child(3) h4').textContent= siteContent['main-content']['vision-h4']
+document.querySelector('.bottom-content .text-content:nth-child(3) p').textContent= siteContent['main-content']['vision-content']
+
+//contact
+document.querySelector('.contact h4').textContent = siteContent.contact['contact-h4']
+document.querySelector('.contact p').textContent = siteContent.contact.address
+document.querySelector('.contact p:nth-child(3)').textContent = siteContent.contact.phone
+document.querySelector('.contact p:nth-child(4)').textContent = siteContent.contact.email
+
+//copyright
+document.querySelector('footer').textContent = siteContent.footer.copyright
+
+
+//color changin and element
+
+const navFirst = document.createElement('a')
+const navLast = document.createElement('a')
+navFirst.textContent = 'imFirst'
+navFirst.href = '#'
+navLast.textContent = 'imLast'
+navLast.href = '#'
+
+const nav = document.querySelector('header nav')
+nav.appendChild(navLast)
+nav.prepend(navFirst)
+
+document.querySelectorAll('.container header nav a').forEach (a=>{
+  a.style.color = "green"
+})
+
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
